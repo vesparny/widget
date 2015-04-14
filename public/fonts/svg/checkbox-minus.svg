@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>checkbox-</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M0,3.99683887 C0,1.78944571 1.79412025,0 3.99683887,0 L24.0031611,0 C26.2105543,0 28,1.79412025 28,3.99683887 L28,24.0031611 C28,26.2105543 26.2058797,28 24.0031611,28 L3.99683887,28 C1.78944571,28 0,26.2058797 0,24.0031611 L0,3.99683887 Z M2,4.00494659 C2,2.89764516 2.89702623,2 4.00494659,2 L23.9950534,2 C25.1023548,2 26,2.89702623 26,4.00494659 L26,23.9950534 C26,25.1023548 25.1029738,26 23.9950534,26 L4.00494659,26 C2.89764516,26 2,25.1029738 2,23.9950534 L2,4.00494659 Z" id="checkbox-" fill="#FF0000" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>

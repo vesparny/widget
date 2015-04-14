@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "src/server"
+  ],
+  "ext": "js json jade",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

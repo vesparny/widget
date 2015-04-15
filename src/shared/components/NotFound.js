@@ -2,8 +2,7 @@
 
 import React from 'react';
 
-let NotFound = React.createClass({
-
+class NotFound extends React.Component {
   render() {
     return (
       <div>
@@ -11,5 +10,6 @@ let NotFound = React.createClass({
       </div>
     );
   }
-});
-export default NotFound;
+}
+
+export default NotFound

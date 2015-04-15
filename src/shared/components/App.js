@@ -7,7 +7,7 @@ class App extends React.Component {
   render() {
     return (
     <div>
-      <RouteHandler />
+      <RouteHandler {...this.props} key={this.props.pathname} />
     </div>
     );
   }

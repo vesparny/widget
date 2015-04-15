@@ -3,8 +3,21 @@
 import React from 'react';
 import Router from 'react-router';
 import routes from '../shared/routes';
+import FluxComponent from 'flummox/component';
+import Flux from '../shared/Flux';
 
-Router.run(routes, Router.HistoryLocation, (Handler, state) => {
-  console.log(state);
-  React.render(<Handler />, document.getElementById('root'));
+// Initialize flux
+const flux = new Flux();
+
+const router = Router.create({
+  routes: routes,
+  location: Router.HistoryLocation
+});
+
+router.run((Handler, state) => {
+  React.render(
+    <FluxComponent flux={flux}>
+      <Handler {...state} />
+    </FluxComponent>,
+    document.getElementById('root'));
 });

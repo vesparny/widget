@@ -7,10 +7,13 @@ import path from 'path';
 import cors from 'cors';
 import React from 'react';
 import Router from 'react-router';
+import FluxComponent from 'flummox/component';
+import Flux from '../shared/Flux';
 import routes from '../shared/routes';
 import address from 'network-address';
 import api from './api';
 import logger from './logger';
+import { CustomError } from './errors';
 import app from './app';
 
 const webpackConfigDev = require('../../webpack.config.development');
@@ -32,10 +35,22 @@ app.use('/api', api);
 
 // react-router will take care of the rest
 app.use((req, res) => {
+  const flux = new Flux();
+  let appString;
+
   Router.run(routes, req.path, function (Handler, state) {
     let isNotFound = state.routes.some(route => route.name === 'not-found');
     res.status(isNotFound ? 404 : 200);
-    let appString = React.renderToString(<Handler />);
+    try {
+    appString = React.renderToString(
+      <FluxComponent flux={flux}>
+        <Handler {...state} />
+      </FluxComponent>);
+    }catch (err) {
+      throw new CustomError({
+        message: err.message
+      });
+    }
     res.render('index', {
       js: js,
       appString: appString

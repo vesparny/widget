@@ -1,5 +1,8 @@
 # widget
 
-[![dependency status](https://david-dm.org/vesparny/widget/dev-status.svg)](https://david-dm.org/vesparny/widget "Dependency status")
+[![dependency status](https://david-dm.org/vesparny/widget/status.svg)](https://david-dm.org/vesparny/widget "Dependency status")
 
-[![Dev dependency status](https://david-dm.org/widget/w/dev-status.svg)](https://david-dm.org/vesparny/widget#info=devDependencies "Dependency status")
+[![dev dependency status](https://david-dm.org/vesparny/widget.svg)](https://david-dm.org/vesparny/widget#info=devDependencies "Dependency status")
+
+## Links
+* https://github.com/gpbl/isomorphic500

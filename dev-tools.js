@@ -10,7 +10,12 @@ new WebpackDevServer(webpack(webpackConfig), {
   publicPath: webpackConfig.output.publicPath,
   hot: true,
   stats: {
-    colors: true
+    colors:       true,
+    hash:         false,
+    timings:      true,
+    chunks:       false,
+    chunkModules: false,
+    modules:      false
   },
   historyApiFallback: true
 }).listen(webpackConfig._hotPort, function (err) {

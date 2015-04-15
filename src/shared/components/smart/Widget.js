@@ -7,8 +7,17 @@ import connectToStores from 'flummox/connect';
 
 
 class Widget extends React.Component {
+
+  componentDidMount(){
+    const widgetActions = this.props.flux.getActions('widget')
+    widgetActions.getFile();
+    widgetActions.getTranscript();
+  }
+
   render() {
-    console.log(this.props);
+    const { file, transcript} = this.props;
+    console.log(transcript);
+    const video = this.props.file.get('_id') ? <Video file={this.props.file}/> : '';
     return (
       <div className="Widget-container wrapper-widget-video ng-scope w600">
         <div className="wrapper">
@@ -24,7 +33,7 @@ class Widget extends React.Component {
             </div>
           </div>
         </div>
-        <Video />
+        {video}
         <Transcript />
       </div>
      );

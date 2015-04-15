@@ -1,7 +1,11 @@
 'use strict';
 
 export default{
-  getFile: function () {
-    return {};
+  getFile() {
+    return require('./file.json');
+  },
+
+  getFiletranscript(){
+    return require('./transcript.json');
   }
 }

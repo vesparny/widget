@@ -36,9 +36,9 @@
     "immutable": "^3.6.4",
     "jade": "^1.9.2",
     "jsonwebtoken": "^5.0.0",
+    "lodash": "^3.6.0",
     "network-address": "^1.0.0",
     "react": "^0.13.1",
-    "react-immutable-render-mixin": "^0.8.1",
     "react-router": "^0.13.2",
     "serve-favicon": "^2.2.0",
     "video.js": "^4.12.5"

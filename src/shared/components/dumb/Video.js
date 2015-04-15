@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-import videojs from 'video.js';
 import shallowEqual from 'react/lib/shallowEqual';
 
 
@@ -13,6 +12,8 @@ class Video extends React.Component {
   }
 
   componentDidMount() {
+    var that = this;
+    const videojs = require('video.js');
     var file = this.props.file.toJSON();
     var playFrom = this.props.playFrom;
     var setup = {
@@ -43,7 +44,7 @@ class Video extends React.Component {
         // Allows for smooth scrubbing, when player can't keep up.
         var time = (this.scrubbing) ? this.getCache().currentTime : this.currentTime();
         time = parseInt(time * 100); // we do not need more accuracy
-        file.currentTime = time;
+        that.props.onUpdateTime(time);
       });
     });
   }
@@ -51,12 +52,10 @@ class Video extends React.Component {
   render() {
     const { file } = this.props;
     return (
-      <div className="container padding-15 ng-scope">
         <div className="main-container">
           <div className="widget-video-block" ref="target">
           </div>
         </div>
-      </div>
      );
   }
 }

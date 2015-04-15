@@ -403,7 +403,7 @@ body {
   line-height: 1;
   min-height: 100%;
   position: relative;
-  background: #e5e5e5;
+  background: #fff;
   font-family: "AvenirLT-Medium";
   height: 100%;
   text-rendering: optimizeLegibility;
@@ -3232,8 +3232,8 @@ body.vjs-full-window {
 }
 .tab-video .Tabs-tabContent {
   padding: 20px 0 0 0;
-  height: 130px;
-  overflow: auto;
+  height: 230px;
+  overflow: hidden;
 }
 .wrapper-widget,
 .wrapper-widget-video {

@@ -1,3 +1,5 @@
+'use strict';
+
 import { Store } from 'flummox';
 import { Map, List } from 'immutable';
 import _ from 'lodash';
@@ -23,7 +25,9 @@ class WidgetStore extends Store {
   _getTranscriptSuccess(res){
     var data = res.data;
     var lines = [];
-    var currentLine = [];
+    var ids = 0;
+    var currentLine = {};
+    currentLine[ids] = [];
     var lineLength = 0;
     var lineNumber = 0; // number of currently active line in the transcript
     var LINE_WIDTH = 51; // in characters
@@ -35,12 +39,14 @@ class WidgetStore extends Store {
         var newLineLength = lineLength + label.value.length;
 
         if (newLineLength > LINE_WIDTH) {
+          ids += 1;
           lines.push(currentLine);
-          currentLine = [];
+          currentLine = {};
+          currentLine[ids] = [];
           lineLength = 0;
         }
 
-        currentLine.push({
+        currentLine[ids].push({
           value: label.value,
           transcript:  label.transcript, // TODO: not clear if this field is used
           start: Number(label.start),
@@ -62,11 +68,11 @@ class WidgetStore extends Store {
     });
   }
 
-  getFile(){
+  getFile () {
     return this.state.file;
   }
 
-  getTranscript(){
+  getTranscript () {
     return this.state.transcript;
   }
 }

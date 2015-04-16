@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Line from './Line';
+import Scroll from '../smart/Scroll';
 import shallowEqual from 'react/lib/shallowEqual';
 
 class Transcript extends React.Component {
@@ -23,17 +24,7 @@ class Transcript extends React.Component {
             </ul>
             <div className="Tabs-tabContent">
               <div className="Tabs-pane ng-scope ng-isolate-scope active" heading="Transcript">
-                <div id="transcript" className="transcript ng-scope">
-                {
-                  this.props.transcript.map((lines) => {
-                    let line;
-                    Object.keys(lines.toJS()).forEach((key) => {
-                      line = <Line line={lines.get(key)} key={key}/>;
-                    });
-                    return line;
-                  })
-                }
-                </div>
+                <Scroll transcript={this.props.transcript} />
               </div>
             </div>
           </div>

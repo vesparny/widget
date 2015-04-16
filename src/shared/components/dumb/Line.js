@@ -7,7 +7,7 @@ class Line extends React.Component {
   render() {
     const { line } = this.props;
     const list = line.map((label) => {
-      return <Label label={label} key={label.get('id')}/>;
+      return <Label label={label} key={label.id}/>;
     });
     return (
       <div className="line">

@@ -35,7 +35,7 @@ class Video extends React.Component {
     video.setAttribute('id', file._id);
     React.findDOMNode(this.refs.target).appendChild(video);
     videojs(video, setup, function() {
-      this.src({type: file.videoType, src: file.streamUrl});
+      this.src({type: file.videoType, src: 'http://video-js.zencoder.com/oceans-clip.mp4'});
       if (playFrom) { // if requested to start directly from specific time
           this.currentTime(playFrom);
           this.play();
@@ -44,7 +44,8 @@ class Video extends React.Component {
         // Allows for smooth scrubbing, when player can't keep up.
         var time = (this.scrubbing) ? this.getCache().currentTime : this.currentTime();
         time = parseInt(time * 100); // we do not need more accuracy
-        that.props.onUpdateTime(time);
+        //console.log(time / 100);
+        //that.props.onUpdateTime(time);
       });
     });
   }

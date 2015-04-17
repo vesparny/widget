@@ -37,7 +37,7 @@ class Widget extends React.Component {
               </div>
             </div>
             <div className="container padding-15 ng-scope">
-              
+              //<Video file={file} onUpdateTime={this.onUpdateTime}/>
               <Transcript transcript={transcript} currentTime={currentTime}/>
             </div>
           </div>

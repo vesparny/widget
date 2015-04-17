@@ -24,7 +24,7 @@ class Transcript extends React.Component {
             </ul>
             <div className="Tabs-tabContent">
               <div className="Tabs-pane ng-scope ng-isolate-scope active" heading="Transcript">
-                <Scroll transcript={this.props.transcript} />
+                <Scroll transcript={this.props.transcript} currentTime={this.props.currentTime}/>
               </div>
             </div>
           </div>

@@ -20,6 +20,15 @@ class Scroll extends React.Component {
 
   }
 
+  shouldComponentUpdate(nextProps){
+    return false;
+
+  }
+
+  componentWillReceiveProps(nextProps){
+
+  }
+
   scrollState(scroll) {
       var visibleStart = Math.floor(scroll / this.state.recordHeight);
       var visibleEnd = Math.min(visibleStart + this.state.recordsPerBody, this.props.transcript.count() - 1);
@@ -42,11 +51,13 @@ class Scroll extends React.Component {
 
 
   render() {
+    console.log('rendersasdasdasd');
     var height = this.state.recordHeight * this.props.transcript.count()
     return (
       <div id="transcript" className="transcript ng-scope" ref="scrollable" onScroll={this.onScroll.bind(this)}>
         <div style={{height:height}}>
           <ScrollBody
+            currentTime={this.props.currentTime}
             records={this.props.transcript}
             visibleStart={this.state.visibleStart}
             visibleEnd={this.state.visibleEnd}

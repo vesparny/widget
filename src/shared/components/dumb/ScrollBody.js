@@ -17,7 +17,7 @@ class ScrollBody extends React.Component {
   for (var i = this.props.displayStart; i <= this.props.displayEnd; i+=1) {
       var record = elements[i];
       for (var key in record) {
-        lines.push(<Line line={record[key]} key={key} />);
+        lines.push(<Line line={record[key]} key={key} currentTime={this.props.currentTime}/>);
       }
 
   }

@@ -31,7 +31,7 @@ class WidgetStore extends Store {
     var lineLength = 0;
     var lineNumber = 0; // number of currently active line in the transcript
     var LINE_WIDTH = 51; // in characters
-    var LINE_HEIGHT = 20; // in pixels, related to styles in file-details.styl
+    var LINE_HEIGHT = 20; // in pixels
 
     // split transcript into lines to fit it into the container
     _.each(data.segmentation, function (seg) {

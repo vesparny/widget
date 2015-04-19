@@ -16,15 +16,15 @@ class Transcript extends React.Component {
     return (
       <div className="tab-video">
         <div className="scroll-mobile">
-          <div alignment="left" className="ng-isolate-scope">
+          <div alignment="left">
             <ul className="Tabs u-cf Tabs--alignleft">
-              <li className="selected Tab-li ng-scope active">
-                <a className="Tab-anchor ng-binding" ng-click="select(pane)">Transcript</a>
+              <li className="selected Tab-li active">
+                <a className="Tab-anchor">Transcript</a>
               </li>
             </ul>
             <div className="Tabs-tabContent">
-              <div className="Tabs-pane ng-scope ng-isolate-scope active" heading="Transcript">
-                <Scroll transcript={this.props.transcript} currentTime={this.props.currentTime}/>
+              <div className="Tabs-pane active" heading="Transcript">
+                <Scroll records={this.props.transcript} currentTime={this.props.currentTime}/>
               </div>
             </div>
           </div>

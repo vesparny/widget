@@ -24,7 +24,11 @@ class Transcript extends React.Component {
             </ul>
             <div className="Tabs-tabContent">
               <div className="Tabs-pane active" heading="Transcript">
-                <Scroll records={this.props.transcript} currentTime={this.props.currentTime}/>
+                <Scroll
+                  records={this.props.transcript}
+                  currentTime={this.props.currentTime}
+                  scrollPosition={this.props.scrollPosition}
+                />
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ScrollBody from '../dumb/ScrollBody'
+import $ from 'jquery';
 
 class Scroll extends React.Component {
     constructor(props){
@@ -11,7 +12,7 @@ class Scroll extends React.Component {
       }
     }
 
-  onScroll() {
+  onScroll () {
     var scrollTop = React.findDOMNode(this.refs.container).scrollTop;
     var initialElement = Math.floor(scrollTop / this.props.itemHeight);
     this.setState({
@@ -19,14 +20,18 @@ class Scroll extends React.Component {
     })
   }
 
+  componentWillUpdate (nextProps) {
+    var node = React.findDOMNode(this.refs.container);
+    if (nextProps.scrollPosition !== this.props.scrollPosition) {
+      $(node).animate({
+          scrollTop: this.props.scrollPosition
+      }, 500)
+    }
+  }
 
   render() {
-    var wrapperStyle = {
-      overflow: 'auto',
-      position: 'relative'
-    };
     return (
-      <div className="transcript" style={wrapperStyle} ref="container" onScroll={this.onScroll.bind(this)}>
+      <div className="transcript" ref="container" onScroll={this.onScroll.bind(this)}>
           <ScrollBody
             currentTime={this.props.currentTime}
             records={this.props.records}

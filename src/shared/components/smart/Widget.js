@@ -19,7 +19,7 @@ class Widget extends React.Component {
   }
 
   render() {
-    const { file, transcript, currentTime } = this.props;
+    const { file, transcript, currentTime, scrollPosition } = this.props;
     const video = this.props.file.get('_id') ?
       <Video file={this.props.file} onUpdateTime={this.onUpdateTime} /> :
        '';
@@ -38,7 +38,7 @@ class Widget extends React.Component {
             </div>
             <div className="container padding-15 ng-scope">
               <Video file={file} onUpdateTime={this.onUpdateTime}/>
-              <Transcript transcript={transcript} currentTime={currentTime}/>
+              <Transcript transcript={transcript} currentTime={currentTime} scrollPosition={scrollPosition}/>
             </div>
           </div>
         </div>
@@ -55,12 +55,9 @@ Widget = connectToStores(Widget, {
   widget: (store) => {
     return {
       file: store.getFile(),
-      transcript: store.getTranscript()
-    };
-  },
-  time: (store) => {
-    return {
-      currentTime: store.getCurrentTime()
+      transcript: store.getTranscript(),
+      currentTime: store.getCurrentTime(),
+      scrollPosition: store.getScrollPosition()
     };
   }
 });

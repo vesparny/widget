@@ -21,7 +21,8 @@ class Scroll extends React.Component {
   }
 
   shouldComponentUpdate(nextProps){
-    return false;
+    console.log(nextProps)
+    return true;
 
   }
 

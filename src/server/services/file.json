@@ -1,20 +1,21 @@
 {
-  "_id": "5516f760508cbaff2aee7363",
+  "_id": "552fec9a241562cb523710bc",
   "taskType": "ASR",
+  "taskCreated": "2015-04-16T17:08:42.823Z",
   "taskProgress": 95,
   "creator": {
-    "_id": "54e0a4f9084edc7b0aa2ebc2",
-    "displayName": "Evgeny Bogdanov"
+    "_id": "552fec8d241562cb523710bb",
+    "displayName": "Koemei Demo"
   },
-  "originalUrl": "https://www.youtube.com/watch?v=n_yHZ_vKjno",
+  "originalUrl": "https://www.youtube.com/watch?v=zPx5N6Lh3sw",
   "__v": 0,
-  "description": "Lecture Transcript: http://tech.genius.com/Alex-schultz-lecture-6-growth-annotated Alex Schultz gives an overview of Growth for startups, speaking from a position of authority as the VP of Growth at Facebook. View the readings Alex refers to, his slide deck, at http://startupclass.samaltman.com/courses/lec06/ Discuss this lecture: https://startupclass.co/courses/how-to-start-a-startup/lectures/64035",
-  "length": 2847,
-  "pictureUrl": "//d2m6fmjkj9pxeg.cloudfront.net/0c27d320-c97b-45ce-82e4-ce0dd791e9e2/54e0a4f9084edc7b0aa2ebc2/15-03-28/e83b0d8c-4f78-4fa9-9411-/default_small.png",
-  "streamUrl": "https://d2m6fmjkj9pxeg.cloudfront.net/0c27d320-c97b-45ce-82e4-ce0dd791e9e2/54e0a4f9084edc7b0aa2ebc2/15-03-28/e83b0d8c-4f78-4fa9-9411-/5516f760508cbaff2aee7363.mp4?Expires=1429140203&Signature=Tda3AT-CRjcbxtGLD5~T89SKt8LFAi~pvZvkSrZpcfwhHJP5WGp9QQNgZBq5h2iQ-NPLTW6jghgsopSGWhZYBEx9IUMPuG9ZWEVA504F0ce69r-fESVww1XbI~N3COKnYIytFx9xo4EtMXZNqBwyKLKyPnDpbypbMHfHQXBe~P8_&Key-Pair-Id=APKAJ4SLTRLDD4L3SI5A",
+  "length": 2152,
+  "taskUpdated": "2015-04-16T18:20:48.201Z",
+  "pictureUrl": "//d2m6fmjkj9pxeg.cloudfront.net/ffad17d1-0000-4f8a-ace1-b8b5a16b56e7/552fec8d241562cb523710bb/15-04-16/824e66d7-8fc0-471f-bc09-/default_small.png",
+  "streamUrl": "https://d2m6fmjkj9pxeg.cloudfront.net/ffad17d1-0000-4f8a-ace1-b8b5a16b56e7/552fec8d241562cb523710bb/15-04-16/824e66d7-8fc0-471f-bc09-/552fec9a241562cb523710bc.mp4?Expires=1429302925&Signature=lS9dINZmr82PySYFLeCo9BmO7ik0GuBXa7YwYCSnqKIcQms88Om09gvr8hk9bHjSKbK~6MJNS97fICeLHcB3of4I-m3MF5mUz5JLugdGtvT1PpcJwqrh53nV2ebn~vLiblVAMRXXW8RHdC5oy2O2oTw5CM6ATfFHbub05yUWSoo_&Key-Pair-Id=APKAJ4SLTRLDD4L3SI5A",
   "taskStatus": "COMPLETE",
-  "transcriptRef": "552bd8a1eecbccf65a8133bb",
+  "transcriptRef": "553001c06389761563bd1831",
   "views": 0,
-  "name": "Lecture 6 - Growth (Alex Schultz)",
-  "created": "2015-03-28T18:48:00.888Z"
+  "name": "Bill Gates Harvard Commencement Address 2007",
+  "created": "2015-04-16T17:08:42.823Z"
 }

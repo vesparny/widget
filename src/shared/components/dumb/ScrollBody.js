@@ -4,7 +4,13 @@ import React from 'react';
 import Line from './Line'
 
 class ScrollBody extends React.Component {
-
+  shouldComponentUpdate(nextProps){
+    var shouldUpdate = (
+            nextProps.visibleStart >= this.props.displayStart &&
+            nextProps.visibleEnd <= this.props.displayEnd
+        )
+        return shouldUpdate;
+  }
   render() {
 
   var elements = this.props.records.toJS();

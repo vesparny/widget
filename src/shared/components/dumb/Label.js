@@ -9,11 +9,11 @@ class Label extends React.Component {
 
 
   shouldComponentUpdate(nextProps, nextState) {
-    return !shallowEqual(this.props, nextProps) ||
-           !shallowEqual(this.state, nextState);
+    return false;
   }
 
   render() {
+    console.log('render labell');
     const { label, isPlayed } = this.props;
     const className = classNames({ blue: isPlayed })
     return (

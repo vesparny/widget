@@ -4,11 +4,15 @@ import React from 'react';
 import Label from './Label';
 
 class Line extends React.Component {
+  shouldComponentUpdate(){
+    return false;
+  }
+
   render() {
-    console.log('render');
+
     const { line } = this.props;
-    const list = line.map((label) => {
-      return <Label label={label} key={label.id} isPlayed={this.props.currentTime >= label.start && this.props.currentTime <= label.end}/>;
+    const list = line.map((label, i) => {
+      return <Label label={label} key={i} isPlayed={this.props.currentTime >= label.start && this.props.currentTime <= label.end}/>;
     });
     return (
       <div className="line">

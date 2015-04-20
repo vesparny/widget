@@ -30,7 +30,7 @@ class Video extends React.Component {
     videojs(video, setup, function() {
       this.src({
         type: file.videoType,
-        src: "https://d2m6fmjkj9pxeg.cloudfront.net/ffad17d1-0000-4f8a-ace1-b8b5a16b56e7/552fec8d241562cb523710bb/15-04-16/824e66d7-8fc0-471f-bc09-/552fec9a241562cb523710bc.mp4?Expires=1429510254&Signature=xHp-YxKmlq-hgHIvbs8qbviBwHozclVPV6-0Yr34LlXzkateibSIzfzIKTtpv-msZbEMoFwvDqoSxeDI-03a0uW7HWEfHuH9bGAETH~fwT3c-RU4g8tnUToHnQ2YfcPV~MH03EBcHMi3nHE836TuMlIJ3VHiIXfiZVG6TSAMnpk_&Key-Pair-Id=APKAJ4SLTRLDD4L3SI5A"});
+        src: file.streamUrl});
       if (playFrom) { // if requested to start directly from specific time
           this.currentTime(playFrom);
           this.play();

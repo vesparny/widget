@@ -21,8 +21,9 @@ class Widget extends React.Component {
   render() {
     const { file, transcript, currentTime, scrollPosition } = this.props;
     const video = this.props.file.get('_id') ?
-      <Video file={this.props.file} onUpdateTime={this.onUpdateTime} /> :
-       '';
+      <Video
+        file={this.props.file}
+        onUpdateTime={this.onUpdateTime} /> :'';
     return (
       <div className="Widget-container wrapper-widget-video ng-scope w600">
         <div className="wrapper">
@@ -30,15 +31,19 @@ class Widget extends React.Component {
             <div id="top-nav">
               <a ng-click="gotoWidgetSearchPage()" className="btn-back u-pullLeft">Back</a>
               <div className="wrapper-input u-pullLeft">
-                <label for="search" className="icon icon-search"></label>
-                <input type="text" placeholder="Search now" autocomplete="off" name="search"
+                <label htmlFor="search" className="icon icon-search"></label>
+                <input type="text" placeholder="Search now" autoComplete="off" name="search"
                   className="input-search" />
                 <div ng-click="resetSearch()" className="Btn--close icon-close"></div>
               </div>
             </div>
             <div className="container padding-15 ng-scope">
               {video}
-              <Transcript transcript={transcript} currentTime={currentTime} scrollPosition={scrollPosition}/>
+              <Transcript
+                transcript={transcript}
+                currentTime={currentTime}
+                scrollPosition={scrollPosition}
+              />
             </div>
           </div>
         </div>

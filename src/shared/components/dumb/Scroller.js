@@ -3,19 +3,19 @@
 import React from 'react';
 import Line from './Line'
 
-class ScrollBody extends React.Component {
+class Scroller extends React.Component {
 
   render() {
     const elements = this.props.records.toJS();
     const lines = [];
-    let key = 0;
-    for (let i = this.props.initilaElement; i <= this.props.initilaElement + this.props.visibleElements; i+=1, key+=1){
+    let counter = 0;
+    for (let i = this.props.initilaElement; i <= this.props.initilaElement + this.props.visibleElements; i+=1, counter+=1){
       var record = elements[i];
-      for (key in record) {
+      for (let key in record) {
         lines.push(<Line
           line={record[key]}
-          key={key}
-          i={i}
+          key={counter}
+          absolutePosition={i}
           itemHeight={this.props.itemHeight}
           currentTime={this.props.currentTime}
           />);
@@ -25,7 +25,7 @@ class ScrollBody extends React.Component {
       position: 'relative',
       height: elements.length * this.props.itemHeight + 'px'
     }
-    lines.push(<div style={lastLineStyles} ></div>);
+    lines.push(<div style={lastLineStyles} key='last'></div>);
       return (
         <div>
           {lines}
@@ -34,4 +34,4 @@ class ScrollBody extends React.Component {
   }
 }
 
-export default ScrollBody
+export default Scroller

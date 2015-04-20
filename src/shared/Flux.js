@@ -10,7 +10,7 @@ class Flux extends Flummox {
     this.createStore('widget', WidgetStore, {widgetActions});
 
     this.on('dispatch', function (payload) {
-      console.log('dispatching -> ',  payload);
+      //console.log('dispatching -> ',  payload);
     });
     this.on('error', function (err) {
       console.error(err.stack);

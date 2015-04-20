@@ -26,9 +26,10 @@ class WidgetStore extends Store {
   }
 
   _updateTime (currentPlayTime) {
-    var lineNumber = 0; // number of currently active line in the transcript
-    var scrollPosition;
-    var currentLineNumber = _.findIndex(this.state.transcript.toJS(), function (lineObj) {
+    const LINE_HEIGHT = 20; // in pixels
+    let lineNumber = 0; // number of currently active line in the transcript
+    let scrollPosition;
+    const currentLineNumber = _.findIndex(this.state.transcript.toJS(), function (lineObj) {
       var isCurrentLine = false;
           var line = lineObj[_.keys(lineObj)[0]];
           isCurrentLine = currentPlayTime >= line[0].start &&
@@ -37,18 +38,11 @@ class WidgetStore extends Store {
       return isCurrentLine;
 
     });
-
-    var LINE_HEIGHT = 20; // in pixels
-
     if (currentLineNumber >= 0 && // check that the line was found
       currentLineNumber !== lineNumber) { // don't scroll if the same line
       lineNumber = currentLineNumber;
 
-      var lineTopPosition = LINE_HEIGHT * currentLineNumber;
-
-      // don't scroll when playing the first line
-      // afterwards display one line above the active one
-      //if (currentLineNumber > 0) lineTopPosition -= LINE_HEIGHT;
+      let lineTopPosition = LINE_HEIGHT * currentLineNumber;
 
       scrollPosition = lineTopPosition;
     }
@@ -60,20 +54,20 @@ class WidgetStore extends Store {
   }
 
   _getTranscriptSuccess(res){
-    var data = res.data;
-    var lines = [];
-    var ids = 0;
-    var currentLine = {};
+    const data = res.data;
+    let lines = [];
+    let ids = 0;
+    let currentLine = {};
     currentLine[ids] = [];
-    var lineLength = 0;
-    var lineNumber = 0; // number of currently active line in the transcript
-    var LINE_WIDTH = 51; // in characters
-    var LINE_HEIGHT = 20; // in pixels
+    let lineLength = 0;
+    let lineNumber = 0; // number of currently active line in the transcript
+    let LINE_WIDTH = 51; // in characters
+    let LINE_HEIGHT = 20; // in pixels
 
     // split transcript into lines to fit it into the container
     _.each(data.segmentation, function (seg) {
       _.each(seg.labels, function (label) {
-        var newLineLength = lineLength + label.value.length;
+        let newLineLength = lineLength + label.value.length;
 
         if (newLineLength > LINE_WIDTH) {
           ids += 1;

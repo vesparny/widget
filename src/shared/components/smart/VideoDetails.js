@@ -1,10 +1,11 @@
 'use strict';
 
 import React from 'react';
-import ScrollBody from '../dumb/ScrollBody'
+import Scroller from '../dumb/Scroller'
 import $ from 'jquery';
 
-class Scroll extends React.Component {
+class VideoDetails extends React.Component {
+
     constructor(props){
       super(props);
       this.state = {
@@ -32,21 +33,22 @@ class Scroll extends React.Component {
   render() {
     return (
       <div className="transcript" ref="container" onScroll={this.onScroll.bind(this)}>
-          <ScrollBody
+          <Scroller
             currentTime={this.props.currentTime}
             records={this.props.records}
             initilaElement={this.state.initilaElement}
             visibleElements={this.props.visibleElements}
             itemHeight={this.props.itemHeight}
+            onUpdateTime={this.props.onUpdateTime}
           />
       </div>
     )
   }
 }
 
-Scroll.defaultProps = {
+VideoDetails.defaultProps = {
   itemHeight: 20,
   visibleElements: 6
 };
 
-export default Scroll
+export default VideoDetails

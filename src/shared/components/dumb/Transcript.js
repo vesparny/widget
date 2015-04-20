@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Line from './Line';
-import Scroll from '../smart/Scroll';
+import VideoDetails from '../smart/VideoDetails';
 import shallowEqual from 'react/lib/shallowEqual';
 
 class Transcript extends React.Component {
@@ -24,7 +24,7 @@ class Transcript extends React.Component {
             </ul>
             <div className="Tabs-tabContent">
               <div className="Tabs-pane active" heading="Transcript">
-                <Scroll
+                <VideoDetails
                   records={this.props.transcript}
                   currentTime={this.props.currentTime}
                   scrollPosition={this.props.scrollPosition}

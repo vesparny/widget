@@ -4,6 +4,11 @@ import React from 'react';
 
 class Video extends React.Component {
 
+  constructor(props){
+    super(props)
+    this.player;
+  }
+
   componentDidMount() {
     const that = this;
     const videojs = require('video.js');
@@ -27,14 +32,10 @@ class Video extends React.Component {
     video = wrapper.firstChild;
     video.setAttribute('id', file._id);
     React.findDOMNode(that.refs.target).appendChild(video);
-    videojs(video, setup, function() {
+    this.player = videojs(video, setup, function() {
       this.src({
         type: file.videoType,
         src: file.streamUrl});
-      if (playFrom) { // if requested to start directly from specific time
-          this.currentTime(playFrom);
-          this.play();
-        }
       this.on('timeupdate', function () {
         const time = this.scrubbing ?
           this.getCache().currentTime :

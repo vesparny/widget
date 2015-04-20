@@ -9,15 +9,16 @@ class Line extends React.Component {
     const { line } = this.props;
     const labelStyle = {
       position:'absolute',
-      transform: `translateY(${this.props.i * this.props.itemHeight}px)`,
+      transform: `translateY(${this.props.absolutePosition * this.props.itemHeight}px)`,
       height: `${this.props.itemHeight}px`
     };
-    const list = line.map((label, i) => {
+    const list = line.map((label, index) => {
       return (
         <Label
           label={label}
-          key={i}
-          isPlayed={this.props.currentTime >= label.start && this.props.currentTime <= label.end}/>
+          key={index}
+          isPlayed={this.props.currentTime >= label.start && this.props.currentTime <= label.end}
+        />
       );
     });
     return (

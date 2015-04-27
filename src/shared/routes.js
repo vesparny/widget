@@ -1,4 +1,6 @@
-import React from 'react';
+'use strict';
+
+import React from 'react'; // eslint no-unsed-vars
 import {Route, DefaultRoute, NotFoundRoute} from 'react-router';
 import App from './components/App';
 import Widget from './components/smart/Widget';

@@ -19,7 +19,7 @@ class WidgetStore extends Store {
     this.registerAsync(widgetActions.getTranscript, null, this._getTranscriptSuccess, null);
   }
 
-  _getFileSuccess(res){
+  _getFileSuccess(res) {
     this.setState({
       file: this.state.file.merge(res.data)
     });
@@ -30,13 +30,11 @@ class WidgetStore extends Store {
     let lineNumber = 0; // number of currently active line in the transcript
     let scrollPosition;
     const currentLineNumber = _.findIndex(this.state.transcript.toJS(), function (lineObj) {
-      var isCurrentLine = false;
-          var line = lineObj[_.keys(lineObj)[0]];
-          isCurrentLine = currentPlayTime >= line[0].start &&
-            currentPlayTime <= line[line.length - 1].end;
-
+      let isCurrentLine = false;
+      let line = lineObj[_.keys(lineObj)[0]];
+      isCurrentLine = currentPlayTime >= line[0].start &&
+      currentPlayTime <= line[line.length - 1].end;
       return isCurrentLine;
-
     });
     if (currentLineNumber >= 0 && // check that the line was found
       currentLineNumber !== lineNumber) { // don't scroll if the same line
@@ -53,16 +51,16 @@ class WidgetStore extends Store {
     });
   }
 
-  _getTranscriptSuccess(res){
+  _getTranscriptSuccess(res) {
     const data = res.data;
     let lines = [];
     let ids = 0;
     let currentLine = {};
     currentLine[ids] = [];
     let lineLength = 0;
-    let lineNumber = 0; // number of currently active line in the transcript
+    // let lineNumber = 0; // number of currently active line in the transcript
     let LINE_WIDTH = 51; // in characters
-    let LINE_HEIGHT = 20; // in pixels
+    // let LINE_HEIGHT = 20; // in pixels
 
     // split transcript into lines to fit it into the container
     _.each(data.segmentation, function (seg) {
@@ -79,11 +77,11 @@ class WidgetStore extends Store {
 
         currentLine[ids].push({
           value: label.value,
-          transcript:  label.transcript, // TODO: not clear if this field is used
+          transcript: label.transcript, // TODO: not clear if this field is used
           start: Number(label.start),
           end: Number(label.end),
           confidence: Number(label.confidence),
-          id: 'l_'  + label.start
+          id: 'l_' + label.start
         });
 
         lineLength += label.value.length;
@@ -117,4 +115,4 @@ class WidgetStore extends Store {
 
 }
 
-export default WidgetStore
+export default WidgetStore;

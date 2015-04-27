@@ -18,4 +18,4 @@ class WidgetActions extends Actions {
   }
 }
 
-export default WidgetActions
+export default WidgetActions;

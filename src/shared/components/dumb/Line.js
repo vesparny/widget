@@ -8,7 +8,7 @@ class Line extends React.Component {
   render() {
     const { line } = this.props;
     const labelStyle = {
-      position:'absolute',
+      position: 'absolute',
       transform: `translateY(${this.props.absolutePosition * this.props.itemHeight}px)`,
       height: `${this.props.itemHeight}px`
     };
@@ -32,4 +32,4 @@ class Line extends React.Component {
   }
 }
 
-export default Line
+export default Line;

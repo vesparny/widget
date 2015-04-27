@@ -28,11 +28,11 @@ class Video extends React.Component {
     let video, wrapper;
 
     wrapper = document.createElement('div');
-    wrapper.innerHTML = "<video class='video-js vjs-koemei-skin'></video>";
+    wrapper.innerHTML = '<video class="video-js vjs-koemei-skin"></video>';
     video = wrapper.firstChild;
     video.setAttribute('id', file._id);
     React.findDOMNode(that.refs.target).appendChild(video);
-    this.player = videojs(video, setup, function() {
+    this.player = videojs(video, setup, function () {
       this.src({
         type: file.videoType,
         src: file.streamUrl});
@@ -56,4 +56,4 @@ class Video extends React.Component {
   }
 }
 
-export default Video
+export default Video;

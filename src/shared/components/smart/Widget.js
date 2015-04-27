@@ -23,7 +23,7 @@ class Widget extends React.Component {
     const video = this.props.file.get('_id') ?
       <Video
         file={this.props.file}
-        onUpdateTime={this.onUpdateTime} /> :'';
+        onUpdateTime={this.onUpdateTime} /> : '';
     return (
       <div className="Widget-container wrapper-widget-video ng-scope w600">
         <div className="wrapper">
@@ -67,4 +67,4 @@ Widget = connectToStores(Widget, {
   }
 });
 
-export default Widget
+export default Widget;

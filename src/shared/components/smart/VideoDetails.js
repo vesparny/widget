@@ -1,32 +1,32 @@
 'use strict';
 
 import React from 'react';
-import Scroller from '../dumb/Scroller'
+import Scroller from '../dumb/Scroller';
 import $ from 'jquery';
 
 class VideoDetails extends React.Component {
 
-    constructor(props){
+    constructor(props) {
       super(props);
       this.state = {
         initilaElement: 0
-      }
+      };
     }
 
   onScroll () {
-    var scrollTop = React.findDOMNode(this.refs.container).scrollTop;
-    var initialElement = Math.floor(scrollTop / this.props.itemHeight);
+    const scrollTop = React.findDOMNode(this.refs.container).scrollTop;
+    const initialElement = Math.floor(scrollTop / this.props.itemHeight);
     this.setState({
       initilaElement: Math.min(initialElement, Math.max(0, this.props.records.count() - this.props.visibleElements))
-    })
+    });
   }
 
   componentWillUpdate (nextProps) {
-    var node = React.findDOMNode(this.refs.container);
+    const node = React.findDOMNode(this.refs.container);
     if (nextProps.scrollPosition !== this.props.scrollPosition) {
       $(node).animate({
-          scrollTop: this.props.scrollPosition
-      }, 500)
+        scrollTop: this.props.scrollPosition
+      }, 500);
     }
   }
 
@@ -42,7 +42,7 @@ class VideoDetails extends React.Component {
             onUpdateTime={this.props.onUpdateTime}
           />
       </div>
-    )
+    );
   }
 }
 
@@ -51,4 +51,4 @@ VideoDetails.defaultProps = {
   visibleElements: 6
 };
 
-export default VideoDetails
+export default VideoDetails;

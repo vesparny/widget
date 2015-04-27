@@ -1,16 +1,18 @@
+'use strict';
+
 import { Flummox } from 'flummox';
 import WidgetActions from './actions/WidgetActions';
 import WidgetStore from './stores/WidgetStore';
 
 class Flux extends Flummox {
-  constructor() {
+  constructor () {
     super();
     const widgetActions = this.createActions('widget', WidgetActions);
 
     this.createStore('widget', WidgetStore, {widgetActions});
 
     this.on('dispatch', function (payload) {
-      //console.log('dispatching -> ',  payload);
+      console.log('dispatching -> ', payload);
     });
     this.on('error', function (err) {
       console.error(err.stack);
@@ -18,4 +20,4 @@ class Flux extends Flummox {
   }
 }
 
-export default Flux
+export default Flux;

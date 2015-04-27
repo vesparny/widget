@@ -38,4 +38,4 @@ class Transcript extends React.Component {
   }
 }
 
-export default Transcript
+export default Transcript;

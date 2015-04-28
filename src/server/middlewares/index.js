@@ -6,4 +6,4 @@ import ensureAuth from './ensure-auth';
 export {
   requestLogger,
   ensureAuth
-}
+};

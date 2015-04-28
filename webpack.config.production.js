@@ -1,5 +1,5 @@
 'use strict';
-
+/*eslint-disable */
 var path = require('path');
 var webpack = require('webpack');
 var StatsPlugin = require('stats-webpack-plugin');

@@ -4,16 +4,15 @@ import React from 'react';
 
 class Video extends React.Component {
 
-  constructor(props){
-    super(props)
-    this.player;
+  constructor(props) {
+    super(props);
+    this.player = undefined;
   }
 
   componentDidMount() {
     const that = this;
     const videojs = require('video.js');
     const file = this.props.file.toJSON();
-    const playFrom = this.props.playFrom;
     const setup = {
         techOrder: ['html5', 'flash'],
         width: 560,
@@ -46,7 +45,6 @@ class Video extends React.Component {
   }
 
   render() {
-    const { file } = this.props;
     return (
         <div className="main-container">
           <div className="widget-video-block" ref="target">

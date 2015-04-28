@@ -79,5 +79,5 @@
   "requireSpaceAfterLineComment": true,
   "validateParameterSeparator": ", ",
   "disallowNewlineBeforeBlockStatements": true,
-  "excludeFiles": []
+  "excludeFiles": ["node_modules/**"]
 }

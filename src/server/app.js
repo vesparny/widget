@@ -1,14 +1,10 @@
 'use strict';
 
-import http from 'http';
 import path from 'path';
 import cors from 'cors';
 import express from 'express';
-import address from 'network-address';
 import favicon from 'serve-favicon';
 import compression from 'compression';
-import bunyan from 'bunyan';
-import bformat from 'bunyan-format';
 import helmet from 'helmet';
 import config from '../config';
 import { requestLogger } from './middlewares';

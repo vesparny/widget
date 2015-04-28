@@ -9,7 +9,10 @@ class Scroller extends React.Component {
     const elements = this.props.records.toJS();
     const lines = [];
     let counter = 0;
-    for (let i = this.props.initilaElement; i <= this.props.initilaElement + this.props.visibleElements; i+=1, counter+=1){
+
+    for (let i = this.props.initilaElement;
+      i <= this.props.initilaElement + this.props.visibleElements;
+      i += 1, counter += 1) {
       const record = elements[i];
       for (let key in record) {
         lines.push(<Line
@@ -19,18 +22,18 @@ class Scroller extends React.Component {
           itemHeight={this.props.itemHeight}
           currentTime={this.props.currentTime}
           />);
-        }
+      }
     }
     const lastLineStyles = {
       position: 'relative',
       height: elements.length * this.props.itemHeight + 'px'
     };
     lines.push(<div style={lastLineStyles} key='last'></div>);
-      return (
-        <div>
-          {lines}
-        </div>
-      );
+    return (
+      <div>
+        {lines}
+      </div>
+    );
   }
 }
 

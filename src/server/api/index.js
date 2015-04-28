@@ -9,4 +9,4 @@ const apiRouter = express.Router();
 auth(apiRouter);
 file(apiRouter);
 
-export default apiRouter
+export default apiRouter;

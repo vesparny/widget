@@ -9,8 +9,9 @@ export default () => {
       statusCode: 401
     });
   };
-}
+};
 
+// jscs:disable
 /*
 import moment from 'moment';
 

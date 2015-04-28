@@ -18,7 +18,7 @@ import app from './app';
 
 const webpackConfigDev = require('../../webpack.config.development');
 
-let js = `http://${webpackConfigDev._address}:${webpackConfigDev._hotPort}/build/bundle.js`; // jscs:disable
+let js = `http://${webpackConfigDev._address}:${webpackConfigDev._hotPort}/build/bundle.js`;
 
 if (app.get('env') === 'development') {
   // run webpack dev server

@@ -1,8 +1,8 @@
 'use strict';
 
-import fileService from '../services/file'
+import fileService from '../services/file';
 
-export default function(router) {
+export default function (router) {
   router.get('/file', (req, res) => {
     res.send(fileService.getFile());
   });

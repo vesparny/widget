@@ -22,7 +22,7 @@ class Widget extends React.Component {
     const { file, transcript, currentTime, scrollPosition } = this.props;
     const video = this.props.file.get('_id') ?
       <Video
-        file={this.props.file}
+        file={file}
         onUpdateTime={this.onUpdateTime} /> : '';
     return (
       <div className="Widget-container wrapper-widget-video ng-scope w600">

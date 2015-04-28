@@ -5,15 +5,15 @@ import ApiUtils from '../utils/ApiUtils';
 
 class WidgetActions extends Actions {
 
-  getFile () {
+  getFile() {
     return ApiUtils.get('api/file');
   }
 
-  getTranscript () {
+  getTranscript() {
     return ApiUtils.get('api/fileTranscript');
   }
 
-  updateTime (time) {
+  updateTime(time) {
     return time;
   }
 }

@@ -1,21 +1,21 @@
 {
-  "_id": "552fec9a241562cb523710bc",
-  "taskType": "ASR",
-  "taskCreated": "2015-04-16T17:08:42.823Z",
-  "taskProgress": 95,
-  "creator": {
-    "_id": "552fec8d241562cb523710bb",
-    "displayName": "Koemei Demo"
-  },
-  "originalUrl": "https://www.youtube.com/watch?v=zPx5N6Lh3sw",
-  "__v": 0,
-  "length": 2152,
-  "taskUpdated": "2015-04-16T18:20:48.201Z",
-  "pictureUrl": "//d2m6fmjkj9pxeg.cloudfront.net/ffad17d1-0000-4f8a-ace1-b8b5a16b56e7/552fec8d241562cb523710bb/15-04-16/824e66d7-8fc0-471f-bc09-/default_small.png",
-  "streamUrl": "https://dl.dropboxusercontent.com/u/1081076/552feed5241562cb523710bf.mp4",
-  "taskStatus": "COMPLETE",
-  "transcriptRef": "553001c06389761563bd1831",
-  "views": 0,
-  "name": "Bill Gates Harvard Commencement Address 2007",
-  "created": "2015-04-16T17:08:42.823Z"
+    "_id": "552fec9a241562cb523710bc",
+    "taskType": "ASR",
+    "taskCreated": "2015-04-16T17:08:42.823Z",
+    "taskProgress": 95,
+    "creator": {
+        "_id": "552fec8d241562cb523710bb",
+        "displayName": "Koemei Demo"
+    },
+    "originalUrl": "https://www.youtube.com/watch?v=zPx5N6Lh3sw",
+    "__v": 0,
+    "length": 2152,
+    "taskUpdated": "2015-04-16T18:20:48.201Z",
+    "pictureUrl": "//de6c23fvlhlk1.cloudfront.net/ffad17d1-0000-4f8a-ace1-b8b5a16b56e7/552fec8d241562cb523710bb/15-04-16/824e66d7-8fc0-471f-bc09-/default_small.png",
+    "streamUrl": "https://copy.com/iXODPQ20hTysavmz/552fec9a241562cb523710bc.mp4",
+    "taskStatus": "COMPLETE",
+    "transcriptRef": "553001c06389761563bd1831",
+    "views": 0,
+    "name": "Bill Gates Harvard Commencement Address 2007",
+    "created": "2015-04-16T17:08:42.823Z"
 }

@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-import Line from './Line';
 import VideoDetails from '../smart/VideoDetails';
 import shallowEqual from 'react/lib/shallowEqual';
 

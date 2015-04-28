@@ -5,7 +5,7 @@ export default{
     return require('./file.json');
   },
 
-  getFiletranscript(){
+  getFiletranscript() {
     return require('./transcript.json');
   }
-}
+};

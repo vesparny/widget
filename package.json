@@ -28,6 +28,7 @@
     "webpack-dev-server": "^1.8.0"
   },
   "dependencies": {
+    "additive-animation": "^0.1.0",
     "axios": "^0.5.4",
     "bunyan": "^1.3.4",
     "bunyan-format": "^0.2.1",

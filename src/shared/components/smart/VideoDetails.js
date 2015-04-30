@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Scroller from '../dumb/Scroller';
-import $ from 'jquery';
+import AdditiveAnimation from 'additive-animation';
 
 class VideoDetails extends React.Component {
 
@@ -25,9 +25,14 @@ class VideoDetails extends React.Component {
   componentWillUpdate (nextProps) {
     const node = React.findDOMNode(this.refs.container);
     if (nextProps.scrollPosition !== this.props.scrollPosition) {
-      $(node).animate({
-        scrollTop: this.props.scrollPosition
-      }, 500);
+
+      const animation = new AdditiveAnimation({
+        onRender: (state) => {
+          console.log(state);
+          node.scrollTop += 1;
+        }
+      });
+      animation.animate(node.scrollTop, 200, 500);
     }
   }
 

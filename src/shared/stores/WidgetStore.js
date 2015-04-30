@@ -1,7 +1,7 @@
 'use strict';
 
 import { Store } from 'flummox';
-import { Map, List } from 'immutable';
+import { Map } from 'immutable';
 import _ from 'lodash';
 
 class WidgetStore extends Store {
@@ -10,7 +10,7 @@ class WidgetStore extends Store {
     super();
     this.state = {
       file: new Map(),
-      transcript: new List(),
+      transcript: [],
       currenTime: 0,
       scrollPosition: 0
     };
@@ -29,13 +29,15 @@ class WidgetStore extends Store {
     const LINE_HEIGHT = 20; // in pixels
     let lineNumber = 0; // number of currently active line in the transcript
     let scrollPosition;
-    const currentLineNumber = _.findIndex(this.state.transcript.toJS(), function (lineObj) {
+    // we know the array is sorted, we should probably use binary search
+    const currentLineNumber = _.findIndex(this.state.transcript, function (lineObj) {
       let isCurrentLine = false;
       let line = lineObj[_.keys(lineObj)[0]];
       isCurrentLine = currentPlayTime >= line[0].start &&
       currentPlayTime <= line[line.length - 1].end;
       return isCurrentLine;
     });
+
     if (currentLineNumber >= 0 && // check that the line was found
       currentLineNumber !== lineNumber) { // don't scroll if the same line
       lineNumber = currentLineNumber;
@@ -93,7 +95,7 @@ class WidgetStore extends Store {
       lines.push(currentLine);
     }
     this.setState({
-      transcript: this.state.transcript.merge(lines)
+      transcript: lines
     });
   }
 

@@ -29,12 +29,12 @@ class Widget extends React.Component {
         <div className="wrapper">
           <div className="main-content">
             <div id="top-nav">
-              <a ng-click="gotoWidgetSearchPage()" className="btn-back u-pullLeft">Back</a>
+              <a className="btn-back u-pullLeft">Back</a>
               <div className="wrapper-input u-pullLeft">
                 <label htmlFor="search" className="icon icon-search"></label>
                 <input type="text" placeholder="Search now" autoComplete="off" name="search"
                   className="input-search" />
-                <div ng-click="resetSearch()" className="Btn--close icon-close"></div>
+                <div className="Btn--close icon-close"></div>
               </div>
             </div>
             <div className="container padding-15 ng-scope">

@@ -2,24 +2,28 @@
 
 import React from 'react';
 import Label from './Label';
+import shouldPureComponentUpdate from '../../utils/shouldPureComponentUpdate';
+import _ from 'lodash';
 
 class Line extends React.Component {
 
+  shouldComponentUpdate = shouldPureComponentUpdate;
+
   render() {
-    const { line } = this.props;
+    const { line, currentTime } = this.props;
+    let pooledIndex = 0;
     const labelStyle = {
       position: 'absolute',
       transform: `translateY(${this.props.absolutePosition * this.props.itemHeight}px)`,
       height: `${this.props.itemHeight}px`
     };
-    const list = line.map((label, index) => {
-      return (
-        <Label
-          label={label}
-          key={index}
-          isPlayed={this.props.currentTime >= label.start && this.props.currentTime <= label.end}
-        />
-      );
+    let list = [];
+    _.forIn(line, (label) => {
+      list.push(<Label
+        value={label.value}
+        key={pooledIndex++}
+        isPlayed={currentTime >= label.start && currentTime <= label.end}
+      />);
     });
     return (
       <div

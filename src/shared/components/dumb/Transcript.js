@@ -2,14 +2,11 @@
 
 import React from 'react';
 import VideoDetails from '../smart/VideoDetails';
-import shallowEqual from 'react/lib/shallowEqual';
+import shouldPureComponentUpdate from '../../utils/shouldPureComponentUpdate';
 
 class Transcript extends React.Component {
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return !shallowEqual(this.props, nextProps) ||
-           !shallowEqual(this.state, nextState);
-  }
+  shouldComponentUpdate = shouldPureComponentUpdate;
 
   render() {
     return (

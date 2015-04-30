@@ -9,15 +9,16 @@ class VideoDetails extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        initilaElement: 0
+        startIndex: 0
       };
     }
 
   onScroll () {
     const scrollTop = React.findDOMNode(this.refs.container).scrollTop;
-    const initialElement = Math.floor(scrollTop / this.props.itemHeight);
+    const startIndex = Math.floor(scrollTop / this.props.itemHeight);
     this.setState({
-      initilaElement: Math.min(initialElement, Math.max(0, this.props.records.count() - this.props.visibleElements))
+      startIndex: Math.min(startIndex,
+        Math.max(0, this.props.records.length - this.props.visibleElements))
     });
   }
 
@@ -36,7 +37,7 @@ class VideoDetails extends React.Component {
           <Scroller
             currentTime={this.props.currentTime}
             records={this.props.records}
-            initilaElement={this.state.initilaElement}
+            startIndex={this.state.startIndex}
             visibleElements={this.props.visibleElements}
             itemHeight={this.props.itemHeight}
             onUpdateTime={this.props.onUpdateTime}

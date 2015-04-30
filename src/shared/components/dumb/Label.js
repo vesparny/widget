@@ -2,14 +2,18 @@
 
 import React from 'react';
 import classNames from 'classNames';
+import shouldPureComponentUpdate from '../../utils/shouldPureComponentUpdate';
 
 class Label extends React.Component {
+
+  shouldComponentUpdate = shouldPureComponentUpdate;
+
   render() {
-    const {label, isPlayed} = this.props;
+    const {value, isPlayed} = this.props;
     const className = classNames({blue: isPlayed});
     return (
       <span className={className}>
-        {label.value}
+        {value}
       </span>
      );
   }

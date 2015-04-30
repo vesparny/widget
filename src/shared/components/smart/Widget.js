@@ -3,6 +3,7 @@
 import React from 'react';
 import Video from '../dumb/Video';
 import Transcript from '../dumb/Transcript';
+import VideoDetails from './VideoDetails';
 import connectToStores from 'flummox/connect';
 
 class Widget extends React.Component {
@@ -39,11 +40,13 @@ class Widget extends React.Component {
             </div>
             <div className="container padding-15 ng-scope">
               {video}
-              <Transcript
-                transcript={transcript}
-                currentTime={currentTime}
-                scrollPosition={scrollPosition}
-              />
+              <Transcript>
+                <VideoDetails
+                  records={transcript}
+                  currentTime={currentTime}
+                  scrollPosition={scrollPosition}
+                />
+                </Transcript>
             </div>
           </div>
         </div>

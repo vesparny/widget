@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-import VideoDetails from '../smart/VideoDetails';
 import shouldPureComponentUpdate from '../../utils/shouldPureComponentUpdate';
 
 class Transcript extends React.Component {
@@ -20,11 +19,7 @@ class Transcript extends React.Component {
             </ul>
             <div className="Tabs-tabContent">
               <div className="Tabs-pane active" heading="Transcript">
-                <VideoDetails
-                  records={this.props.transcript}
-                  currentTime={this.props.currentTime}
-                  scrollPosition={this.props.scrollPosition}
-                />
+              {this.props.children}
               </div>
             </div>
           </div>

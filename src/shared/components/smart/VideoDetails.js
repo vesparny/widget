@@ -22,20 +22,21 @@ class VideoDetails extends React.Component {
     });
   }
 
-  componentWillUpdate (nextProps) {
+  componentWillUpdate(nextProps) {
     const node = React.findDOMNode(this.refs.container);
     if (nextProps.scrollPosition !== this.props.scrollPosition) {
-
       const animation = new AdditiveAnimation({
         onRender: (state) => {
-          console.log(state);
-          node.scrollTop += 1;
+          node.scrollTop = state.scrollTop;
         }
       });
-      animation.animate(node.scrollTop, 200, 500);
+      animation.animate({
+        scrollTop: node.scrollTop
+      }, {
+        scrollTop: this.props.scrollPosition
+      }, 500, 'linear');
     }
   }
-
   render() {
     return (
       <div className="transcript" ref="container" onScroll={this.onScroll.bind(this)}>

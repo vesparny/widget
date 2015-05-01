@@ -1,26 +1,37 @@
 'use strict';
 
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var webpackConfig = require('./webpack.config.development.js');
-var path = require('path');
+import webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+import config from './webpack.config.development.js';
+import path from 'path';
 import logger from './src/server/logger';
 
-new WebpackDevServer(webpack(webpackConfig), {
-  publicPath: webpackConfig.output.publicPath,
+const serverOptions = {
+  publicPath: config.output.publicPath,
   hot: true,
   stats: {
-    colors:       true,
-    hash:         false,
-    timings:      true,
-    chunks:       false,
+    colors: true,
+    hash: false,
+    timings: true,
+    chunks: false,
     chunkModules: false,
-    modules:      false
+    modules: false
   },
   historyApiFallback: true
-}).listen(webpackConfig._hotPort, function (err) {
+}
+
+
+const compiler = webpack(config);
+const webpackDevServer = new WebpackDevServer(compiler, serverOptions);
+
+
+webpackDevServer.app.on('error', function(err){
+  console.log('errdaskdnlaksndk', err );
+});
+
+webpackDevServer.listen(config._hotPort, function(err) {
   if (err) {
     throw err;
   }
-  logger.info('webpack dev server listening on %s', webpackConfig._hotPort);
+  logger.info('webpack dev server listening on %s', config._hotPort);
 });

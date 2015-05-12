@@ -19,15 +19,8 @@ const serverOptions = {
   },
   historyApiFallback: true
 }
-
-
 const compiler = webpack(config);
 const webpackDevServer = new WebpackDevServer(compiler, serverOptions);
-
-
-webpackDevServer.app.on('error', function(err){
-  console.log('errdaskdnlaksndk', err );
-});
 
 webpackDevServer.listen(config._hotPort, function(err) {
   if (err) {

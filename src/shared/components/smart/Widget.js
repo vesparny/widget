@@ -8,7 +8,7 @@ import connectToStores from 'flummox/connect';
 
 class Widget extends React.Component {
 
-  constructor () {
+  constructor() {
     super();
     this.onUpdateTime = this.onUpdateTime.bind(this);
   }
@@ -54,7 +54,7 @@ class Widget extends React.Component {
      );
   }
 
-  onUpdateTime (time) {
+  onUpdateTime(time) {
     this.props.flux.getActions('widget').updateTime(time);
   }
 }

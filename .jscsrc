@@ -8,15 +8,12 @@
     "else",
     "for", "while", "do", "switch", "return", "try", "catch"
   ],
-  "requireSpaceBeforeBlockStatements": false,
   "requireParenthesesAroundIIFE": true,
   "requireSpacesInConditionalExpression": true,
   "requireSpacesInFunctionExpression": {
-    "beforeOpeningRoundBrace": true,
     "beforeOpeningCurlyBrace": true
   },
   "requireSpacesInFunctionDeclaration": {
-    "beforeOpeningRoundBrace": true,
     "beforeOpeningCurlyBrace": true
   },
   "disallowMultipleVarDecl": "exceptUndefined",
@@ -79,5 +76,5 @@
   "requireSpaceAfterLineComment": true,
   "validateParameterSeparator": ", ",
   "disallowNewlineBeforeBlockStatements": true,
-  "excludeFiles": ["node_modules/**"]
+  "excludeFiles": ["node_modules/**", "public/build"]
 }

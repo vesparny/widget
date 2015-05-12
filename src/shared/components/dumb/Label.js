@@ -6,6 +6,7 @@ import shouldPureComponentUpdate from '../../utils/shouldPureComponentUpdate';
 
 class Label extends React.Component {
 
+  // https://github.com/jscs-dev/node-jscs/issues/1117
   shouldComponentUpdate = shouldPureComponentUpdate;
 
   render() {
